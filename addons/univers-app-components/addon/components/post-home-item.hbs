@@ -1,0 +1,88 @@
+{{#if this.loading}}
+  <div class="max-height-100 {{if this.loading 'loading' 'card-img-loaded'}}">
+    <div class="spinner-border m-5" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+{{else}}
+  <figure
+    class="special-cursor w100 max-height-100"
+    id="image-wrapper-{{this.item.publicID}}"
+  >
+    <img
+      data-bs-toggle="modal"
+      data-bs-target="#modal-post-home"
+      src="{{this.item.image.src}}"
+      class="max-height-100 max-width-100"
+      alt="{{this.item.title}} {{this.item.image.description}}"
+      title="{{this.item.title}} {{this.item.image.description}}"
+      {{on "load" this.imageLoadedHandler}}
+    />
+  </figure>
+  <button
+    type="button"
+    class="d-none p-2 btn-list-sub-item card-title bg-black"
+    data-bs-toggle="modal"
+    data-bs-target="#modal-post-home"
+  >
+    {{this.item.date_y_m_d}}
+  </button>
+
+  <div
+    class="modal fade"
+    id="modal-post-home"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog bg-black">
+      <div class="modal-content bg-black">
+        <div class="modal-header">
+          <h1
+            class="modal-title fs-5"
+            id="exampleModalLabel"
+          >{{this.item.date_y_m_d}}</h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <p class="card-text">
+            {{{this.item.body}}}
+          </p>
+          <figure class="mb-3">
+            <a role="link" href="{{this.item.url}}">
+              <img
+                loading="lazy"
+                src="{{this.item.image.src}}"
+                class="card-img-effect img-fluid image-loaded-{{this.loading}}"
+                alt="{{this.item.title}} {{this.item.image.description}}"
+                title="{{this.item.title}} {{this.item.image.description}}"
+                {{on "load" this.imageLoadedHandler}}
+              />
+            </a>
+          </figure>
+        </div>
+        <div class="modal-footer">
+          <a
+            class="p-2 btn-list-sub-item card-title bg-black"
+            role="link"
+            href="{{this.item.url}}"
+          >
+            Source
+          </a>
+          <button
+            type="button"
+            class="p-2 btn-list-sub-item card-title bg-black"
+            data-bs-dismiss="modal"
+          >X</button>
+        </div>
+      </div>
+    </div>
+  </div>
+{{/if}}
+
+<CursorHover />

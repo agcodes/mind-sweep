@@ -1,1 +1,0 @@
-define("games/config/environment",(function(){return{default:{modulePrefix:"games",lazyLoading:{enabled:!0},dependencies:{services:[]}}}}));

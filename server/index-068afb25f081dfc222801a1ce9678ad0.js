@@ -1,1 +1,0 @@
-"use strict";module.exports=function(r){const e=require("glob").sync,c=e("./mocks/**/*.js",{cwd:__dirname}).map(require),o=e("./proxies/**/*.js",{cwd:__dirname}).map(require);c.forEach((e=>e(r))),o.forEach((e=>e(r)))};

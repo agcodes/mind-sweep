@@ -1,0 +1,67 @@
+<article class="container-xxl mt-4 mb-4">
+  <section class="row">
+
+    <section class="col-12 col-md-6 col-lg-4 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <LinkTo role="link" @route="dissimilarity">
+            <div class="card-body">
+              <img
+                loading="lazy"
+                class="card-img-top card-img-effect"
+                src="{{this.rootURL}}/assets/img/colors-shifts.png"
+                alt=""
+              />
+            </div>
+            <h2 class="btn-index text-center">
+              Color deviation
+            </h2>
+          </LinkTo>
+        </div>
+      </div>
+    </section>
+    <section class="col-12 col-md-6 col-lg-4 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <LinkTo role="link" @route="lightness">
+            <div class="card-body">
+              <img
+                loading="lazy"
+                class="card-img-top card-img-effect"
+                src="{{this.rootURL}}/assets/img/colors-lightness.png"
+                alt=""
+              />
+            </div>
+
+            <h2 class="btn-index text-center">
+              {{tr "Clearest color"}}
+            </h2>
+
+          </LinkTo>
+        </div>
+      </div>
+    </section>
+    <section class="col-12 col-md-6 col-lg-4 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <LinkTo role="link" @route="number">
+            <div class="card-body">
+              <img
+                loading="lazy"
+                class="card-img-top card-img-effect"
+                src="{{this.rootURL}}/assets/img/find-number.png"
+                alt=""
+              />
+            </div>
+            <h2 class="btn-index text-center">
+
+              {{tr "Find the number"}}
+            </h2>
+          </LinkTo>
+        </div>
+      </div>
+    </section>
+  </section>
+</article>
+
+{{outlet}}

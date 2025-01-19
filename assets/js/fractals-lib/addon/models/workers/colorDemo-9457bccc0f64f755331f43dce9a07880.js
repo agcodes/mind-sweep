@@ -1,1 +1,0 @@
-!function(o,n){o.onload=function(){console.log("hello"),new ColorDrawer("c01").start()}}(window);

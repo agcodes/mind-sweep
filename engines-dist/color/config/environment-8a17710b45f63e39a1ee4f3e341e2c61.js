@@ -1,1 +1,0 @@
-define("color/config/environment",(function(){return{default:{modulePrefix:"color",lazyLoading:{enabled:!0},dependencies:{services:[]}}}}));

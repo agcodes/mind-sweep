@@ -1,0 +1,1 @@
+export { default } from 'common-components/components/form/input-number-plus-minus';

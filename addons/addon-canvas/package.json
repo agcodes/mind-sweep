@@ -1,0 +1,44 @@
+{
+  "name": "addon-canvas",
+  "version": "0.0.0",
+  "description": "The default blueprint for ember-cli addons.",
+  "keywords": [
+    "ember-addon"
+  ],
+  "repository": "",
+  "license": "MIT",
+  "author": "",
+  "directories": {
+    "doc": "doc",
+    "test": "tests"
+  },
+  "scripts": {
+    "build": "ember build",
+    "lint:hbs": "ember-template-lint .",
+    "lint:js": "eslint .",
+    "start": "ember serve",
+    "test": "ember test",
+    "test:all": "ember try:each"
+  },
+  "devDependencies": {
+    "three": "0.165.0"
+  },
+  "dependencies": {
+    "common-components": "0.0.0",
+    "calc-utils": "0.0.0",
+    "ember-cli-htmlbars": "*",
+    "ember-cli-babel": "*",
+    "@ember/render-modifiers": "*",
+    "ember-intl": "*",
+    "piexifjs": "^1.0.6"
+  },
+  "engines": {
+    "node": "8.* || >= 10.*"
+  },
+  "ember-addon": {
+    "configPath": "tests/dummy/config",
+    "after": [
+      "base-styling"
+    ]
+  }
+}

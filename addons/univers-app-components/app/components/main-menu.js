@@ -1,0 +1,1 @@
+export { default } from 'univers-app-components/components/main-menu';

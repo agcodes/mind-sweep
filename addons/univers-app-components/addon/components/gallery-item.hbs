@@ -1,0 +1,30 @@
+<div class="text-center d-flex flex-column">
+  <div class="card m-3">
+    <div class="card-body">
+      <figure class="div-thumbnail-gallery">
+        <LinkTo
+          role="link"
+          @route="image.view"
+          @model="{{this.item.urlEncode}}"
+        >
+          <img
+            src={{this.item.thumbnailUrl}}
+            class="img-fluid"
+            loading="lazy"
+            alt="{{this.item.title}} {{this.item.description}}"
+            loading={{this.item.loading}}
+          />
+        </LinkTo>
+      </figure></div>
+    <div class="card-footer">
+      <p>
+        <a href={{this.item.url}}>
+          {{this.item.title}}
+        </a>
+      </p>
+      <p>
+        {{this.item.pubDate}}
+      </p>
+    </div>
+  </div>
+</div>

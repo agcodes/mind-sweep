@@ -1,0 +1,35 @@
+<article class="row">
+  <div class="list-group list-group-flush p-5 font-weight-bold">
+    <p class="list-group-item">
+      I draw pictures with my computer.
+    </p>
+    <li class="list-group-item p-3 font-weight-bold fs-4">
+      <LinkTo role="link" @route="index" title="{{t "Home"}}" rel="home">
+        WEBSITE
+      </LinkTo>
+    </li>
+    <li class="list-group-item p-3 font-weight-bold fs-4">
+      <a href="https://www.instagram.com/universlogique/">
+        INSTA
+      </a>
+    </li>
+    <li class="list-group-item p-3 font-weight-bold fs-4">
+      <a href="https://www.deviantart.com/">
+        DEVIANT ART
+      </a>
+    </li>
+    <li class="list-group-item p-3 m-l-2 font-weight-bold fs-4">
+      <LinkTo role="link" 
+        @route="gallery"
+				class="m-1"
+      >
+        {{t "Gallery"}}
+      </LinkTo>
+    </li>
+    <li class="list-group-item p-3 font-weight-bold fs-4">
+      <a href="https://www.youtube.com/@universlogique/">
+        YOUTUBE
+      </a>
+    </li>
+  </div>
+</article>

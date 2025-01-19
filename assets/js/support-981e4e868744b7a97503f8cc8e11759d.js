@@ -1,1 +1,0 @@
-!1===function(){const e=document.createElement("canvas");return!(!e.getContext||!e.getContext("2d"))}()&&alert("Votre navigateur internet ne supporte pas les fonctionnalités de ce site.");

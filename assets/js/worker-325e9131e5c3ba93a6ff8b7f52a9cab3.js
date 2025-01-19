@@ -1,1 +1,0 @@
-self.onmessage=s=>{const e=[];console.log("on message"),self.postMessage(e,[e])};

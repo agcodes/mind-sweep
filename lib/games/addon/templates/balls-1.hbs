@@ -1,0 +1,14 @@
+<article id="{{"componentID-1"}}" class="row mb-4 mt-4">
+  <aside class="col col-md-12 mb-3">
+    <Form::Balls1F @componentID={{"componentID-1"}} />
+  </aside>
+  <section class="col col-md-12">
+    <Balls1C
+      @fullscreenEnabled={{false}}
+      @marginAutoComponent={{true}}
+      @styleClassCanvas={{"border-gray"}}
+      @componentID={{"componentID-1"}}
+    />
+  </section>
+</article>
+{{outlet}}

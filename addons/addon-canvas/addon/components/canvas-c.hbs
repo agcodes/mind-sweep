@@ -1,0 +1,125 @@
+<div class="d-none" aria-hidden="true">
+  {{this.triggerCanvas}}
+</div>
+
+<div
+  data-name="canvas"
+  class={{this.canvasParams.styleClassContainer}}
+  id={{this.canvasParams.id}}
+  {{on "click" this.handleClick}}
+>
+  <CanvasMenu
+    @canvasParams={{this.canvasParams}}
+    @actionToCanvas={{this.actionFromMenu}}
+    @showMenu={{this.showMenu}}
+  />
+
+  <canvas
+    data-canvas-id={{this.canvasParams.idElementCanvas}}
+    id={{this.canvasParams.idElementCanvas}}
+    class={{this.canvasParams.styleClassCanvas}}
+    data-component-id={{this.canvasParams.componentID}}
+    width="0"
+    height="0"
+  >
+    <div>
+      {{tr "Canvas not supported or disabled"}}
+    </div>
+  </canvas>
+
+  {{#if this.recordingInfo}}
+    <div
+      class="position-absolute top-0 start-1 m-4 toast-container p-3"
+      id="toastPlacement"
+    >
+      <div
+        class="toast fade show"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="toast-header">
+          {{#if this.videoUrl}}
+            <svg
+              class="bd-placeholder-img rounded me-2"
+              width="20"
+              height="20"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              preserveAspectRatio="xMidYMid slice"
+              focusable="false"
+            ><rect width="100%" height="100%" fill="#007aff"></rect></svg>
+          {{else}}
+            <svg
+              class="bd-placeholder-img rounded me-2"
+              width="20"
+              height="20"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              preserveAspectRatio="xMidYMid slice"
+              focusable="false"
+            ><rect width="100%" height="100%" fill="red"></rect></svg>
+          {{/if}}
+          <strong class="me-auto">{{this.recordingInfo}}</strong>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+        {{#if this.videoUrl}}
+          <div class="toast-body">
+            <span class="">
+              <a
+                id="video-link"
+                target="_blank"
+                class="btn btn-secondary"
+                rel="noopener noreferrer"
+                href="{{this.videoUrl}}"
+              >
+                <span>
+                  WEBM
+                </span>
+              </a>
+            </span>
+            <span class="">
+              <a
+                class="btn btn-secondary"
+                aria-hidden="true"
+                download="video-{{this.canvasParams.idElementCanvas}}"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="{{this.videoUrl}}"
+              >
+                <span>
+                  DL
+                </span>
+              </a></span>
+          </div>
+        {{/if}}
+      </div>
+    </div>
+  {{/if}}
+
+  <canvas
+    class="d-none"
+    aria-hidden="true"
+    data-name="off-screen-canvas"
+    id={{this.canvasParams.idElementCanvasOffscreen}}
+    width="0"
+    height="0"
+    data-component-id={{this.canvasParams.componentID}}
+  >
+  </canvas>
+
+  <canvas
+    class="d-none"
+    data-name="process-canvas"
+    id={{this.canvasParams.idElementProcessCanvas}}
+    width="0"
+    height="0"
+    aria-hidden="true"
+  >
+  </canvas>
+</div>

@@ -1,0 +1,1 @@
+export { default } from 'addon-canvas/components/drawing-component';

@@ -1,1 +1,0 @@
-{"version":3,"file":"environment-8a17710b45f63e39a1ee4f3e341e2c61.js","names":["define","default","modulePrefix","lazyLoading","enabled","dependencies","services"],"sources":["engines-dist/color/config/environment-8a17710b45f63e39a1ee4f3e341e2c61.js"],"mappings":"AAAAA,OAAO,4BAA4B,WACjC,MAAO,CACLC,QAAS,CAACC,aAAe,QAAQC,YAAc,CAACC,SAAU,GAAMC,aAAe,CAACC,SAAW,KAE/F","ignoreList":[]}
