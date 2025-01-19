@@ -1,0 +1,14 @@
+<div {{did-insert this.notifyReady}}>
+  <label class="toggle">
+    <input
+      class="toggle-checkbox"
+      type="checkbox"
+      name={{this.field}}
+      id={{this.inputId}}
+      title={{this.title}}
+      {{on "change" (fn this.changeCheckValue)}}
+    />
+    <div class="toggle-switch"></div>
+    <span class="toggle-label">{{this.title}}</span>
+  </label>
+</div>

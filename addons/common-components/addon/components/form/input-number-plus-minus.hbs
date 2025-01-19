@@ -1,0 +1,105 @@
+<div {{did-insert this.notifyReady}}>
+  <div class="">
+    {{#if this.typeRange}}
+      <div class="text-center fs-90 mb-2">
+        {{#if this.hasHeader}}
+          <span>{{this.headerInfo}}</span>
+          :
+        {{/if}}
+        <span id="{{this.componentLabelID}}{{this.field}}">
+          {{this.value}}
+        </span>
+      </div>
+    {{else}}
+      {{#if this.hasHeader}}
+        <div class="text-center">{{this.headerInfo}}</div>
+      {{/if}}
+    {{/if}}
+
+    <div class="input-group">
+      {{#if this.title}}
+        <div class="input-group-prepend">
+          <div
+            class="input-group-text border-0 bg-transparent txt-light min-width-6"
+          >
+            <label for={{this.inputId}}>
+              <span>
+                {{this.title}}
+              </span>
+            </label>
+          </div>
+        </div>
+      {{/if}}
+      {{#if this.plusMinusButtons}}
+        <div class="input-group-prepend">
+          <div class="input-group-text div-btn-plus-minus">
+            <button
+              type="button"
+              role="button"
+              title="- {{this.title}}"
+              aria-label="Minus"
+              id="{{this.inputId}}-btn-minus"
+              class="text-center btn-plus-minus btn btn-sm"
+              {{on "click" (fn this.minusFunction)}}
+            >
+              -
+            </button>
+          </div>
+        </div>
+      {{/if}}
+
+      {{#if this.typeRange}}
+        <input
+          type="range"
+          id={{this.inputId}}
+          class="form-control text-primary border-1-light form-range"
+          value={{this.value}}
+          min={{this.min}}
+          max={{this.max}}
+          step={{this.step}}
+          name={{this.field}}
+          title={{this.title}}
+          {{on "change" (fn this.changeRangeValue)}}
+        />
+      {{else}}
+        <input
+          type="number"
+          id={{this.inputId}}
+          class="form-control text-primary border-1-light input-number"
+          pattern="[0-9,.]+"
+          title={{this.title}}
+          value={{this.value}}
+          min={{this.min}}
+          max={{this.max}}
+          step={{this.step}}
+          name={{this.field}}
+          {{on "change" (fn this.changeNumFunction)}}
+        />
+      {{/if}}
+
+      {{#if this.plusMinusButtons}}
+        <div class="input-group-prepend">
+          <div class="input-group-text div-btn-plus-minus">
+            <button
+              type="button"
+              role="button"
+              aria-label="Plus"
+              id="{{this.inputId}}-btn-plus"
+              class="text-center btn-plus-minus btn btn-sm"
+              {{on "click" (fn this.plusFunction)}}
+              {{on "contextmenu" (fn this.contextMenuPlusFunction @event)}}
+            >
+              +
+            </button>
+            <div id="{{this.inputId}}-context-menu" class="context-menu hidden">
+              <button
+                class="btn btn-sm"
+                {{action "optionSelected" "switch-number"}}
+              >number / range</button>
+            </div>
+          </div>
+        </div>
+      {{/if}}
+    </div>
+  </div>
+</div>

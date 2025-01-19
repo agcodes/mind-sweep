@@ -1,0 +1,188 @@
+<form
+  novalidate
+  action="javascript:void(0);"
+  id="{{this.componentID}}-form"
+  data-component-id={{this.componentID}}
+>
+  <ol class="list-group">
+    <li class="list-group-item">
+      <input
+        id="{{this.componentID}}-img-color"
+        class="form-control"
+        type="file"
+        {{on "change" (fn this.upload @event)}}
+      />
+    </li>
+    <li class="list-group-item">
+      <button
+        class="btn-list-page btn btn-outline-secondary"
+        role="button"
+        type="button"
+        data-action-name="reload"
+        {{on "click" (fn this.componentExecAction @event)}}
+      >
+        {{tr "Reload"}}
+      </button>
+    </li>
+    <li class="list-group-item">
+      <button
+        class="btn-list-page btn btn-outline-secondary"
+        role="button"
+        type="button"
+        data-param1="red"
+        data-action-name="changeRgb"
+        {{on "click" (fn this.componentExecAction @event)}}
+      >
+        {{tr "Red"}}
+      </button>
+    </li>
+
+    <li class="list-group-item">
+      <label class="form-label" for="{{this.componentID}}-red">
+        {{tr "Red"}}
+        :
+        <span id="{{this.componentLabelID}}-red">
+          0
+        </span>
+      </label>
+      <input
+        placeholder="red"
+        pattern="[0-9,.]+"
+        required
+        min="0"
+        max="255"
+        type="range"
+        class="form-range"
+        data-action-name="changeColor"
+        data-param1="red"
+        data-id="red"
+        id="{{this.componentID}}-red"
+        name="red"
+        value="0"
+        {{on "change" (fn this.componentChangeInputValue @event)}}
+      />
+    </li>
+
+    <li class="list-group-item">
+      <button
+        class="btn-list-page btn btn-outline-secondary"
+        role="button"
+        type="button"
+        data-param1="green"
+        data-action-name="changeRgb"
+        {{on "click" (fn this.componentExecAction @event)}}
+      >
+        {{tr "Green"}}
+      </button>
+    </li>
+
+    <li class="list-group-item">
+      <label class="form-label" for="{{this.componentID}}-green">
+        {{tr "Green"}}
+        :
+        <span id="{{this.componentLabelID}}-green">
+          0
+        </span>
+      </label>
+      <input
+        placeholder="green"
+        pattern="[0-9,.]+"
+        required
+        min="0"
+        max="255"
+        type="range"
+        class="form-range"
+        data-action-name="changeColor"
+        data-param1="green"
+        data-id="green"
+        id="{{this.componentID}}-green"
+        name="green"
+        value="0"
+        {{on "change" (fn this.componentChangeInputValue @event)}}
+      />
+    </li>
+
+    <li class="list-group-item">
+      <button
+        class="btn-list-page btn btn-outline-secondary"
+        role="button"
+        type="button"
+        data-param1="blue"
+        data-action-name="changeRgb"
+        {{on "click" (fn this.componentExecAction @event)}}
+      >
+        {{tr "Blue"}}
+      </button>
+    </li>
+
+    <li class="list-group-item">
+      <label class="form-label" for="{{this.componentID}}-blue">
+        {{tr "Blue"}}
+        :
+        <span id="{{this.componentLabelID}}-blue">
+          0
+        </span>
+      </label>
+      <input
+        placeholder="blue"
+        pattern="[0-9,.]+"
+        required
+        min="0"
+        max="255"
+        type="range"
+        class="form-range"
+        data-action-name="changeColor"
+        data-param1="blue"
+        data-id="blue"
+        id="{{this.componentID}}-blue"
+        name="blue"
+        value="0"
+        {{on "change" (fn this.componentChangeInputValue @event)}}
+      />
+    </li>
+    <li class="list-group-item">
+      <button
+        class="btn-list-page btn btn-outline-secondary"
+        role="button"
+        type="button"
+        data-action-name="edge-detect"
+        {{on "click" (fn this.componentExecAction @event)}}
+      >
+        Edge detect
+      </button>
+    </li>
+    <li class="list-group-item">
+      <button
+        class="btn-list-page btn btn-outline-secondary"
+        role="button"
+        type="button"
+        data-action-name="edge-thin"
+        {{on "click" (fn this.componentExecAction @event)}}
+      >
+        Edge-thin
+      </button>
+    </li>
+    <li class="list-group-item">
+      <button
+        class="btn-list-page btn btn-outline-secondary"
+        role="button"
+        type="button"
+        data-action-name="gray"
+        {{on "click" (fn this.componentExecAction @event)}}
+      >
+        Gray
+      </button>
+    </li>
+    <li class="list-group-item">
+      <button
+        class="btn-list-page btn btn-outline-secondary"
+        role="button"
+        type="button"
+        data-action-name="gaussian"
+        {{on "click" (fn this.componentExecAction @event)}}
+      >
+        Gaussian
+      </button>
+    </li>
+  </ol>
+</form>

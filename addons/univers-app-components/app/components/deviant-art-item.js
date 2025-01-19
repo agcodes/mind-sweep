@@ -1,0 +1,1 @@
+export { default } from 'univers-app-components/components/deviant-art-item';

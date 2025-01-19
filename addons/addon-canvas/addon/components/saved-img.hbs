@@ -1,0 +1,9 @@
+<div {{did-insert this.notifyReady}}>
+  <div class="{{if this.init 'card' ''}}">
+    <CanvasC
+      @actionToComponent={{this.actionFromCanvas}}
+      @triggerCanvas={{this.triggerCanvas}}
+      @canvasParams={{this.canvasParams}}
+    />
+  </div>
+</div>

@@ -1,0 +1,37 @@
+{
+  "name": "univers-app-components",
+  "version": "0.0.0",
+  "description": "The default blueprint for ember-cli addons.",
+  "keywords": [
+    "ember-addon"
+  ],
+  "repository": "",
+  "license": "MIT",
+  "author": "",
+  "directories": {
+    "doc": "doc",
+    "test": "tests"
+  },
+  "scripts": {
+    "build": "ember build",
+    "lint:hbs": "ember-template-lint .",
+    "lint:js": "eslint .",
+    "start": "ember serve",
+    "test": "ember test",
+    "test:all": "ember try:each"
+  },
+  "dependencies": {
+    "ember-cli-htmlbars": "*",
+    "ember-cli-babel": "*",
+    "ember-intl": "*"
+  },
+  "engines": {
+    "node": "8.* || >= 10.*"
+  },
+  "ember-addon": {
+    "configPath": "tests/dummy/config",
+    "after": [
+      "base-styling"
+    ]
+  }
+}

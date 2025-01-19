@@ -1,0 +1,29 @@
+<article class="container-xxl mt-4 mb-4">
+  <section class="row mb-4">
+    <div class="col col-md-4 col-12">
+      <ul class="list-group index-list index-list-3 mb-3 list-group">
+        <li class="list-group-item">
+          <LinkTo role="link" @route="platform-1">
+            {{tr "Balls"}}
+          </LinkTo>
+        </li>
+        <li class="list-group-item">
+          <LinkTo role="link" @route="balls-1">
+            {{tr "Tennis"}}
+          </LinkTo>
+        </li>
+        <li class="list-group-item">
+          <LinkTo role="link" @route="radar">
+            {{tr "Radar"}}
+          </LinkTo>
+        </li>
+        <li class="list-group-item">
+          <LinkTo role="link" @route="black-synthe">
+            {{tr "Synthesizer"}}
+          </LinkTo>
+        </li>
+      </ul>
+    </div>
+  </section>
+</article>
+{{outlet}}

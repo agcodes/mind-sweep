@@ -1,0 +1,42 @@
+{
+  "name": "games",
+  "version": "0.0.0",
+  "description": "Creates a stand-alone Engine for Ember.js.",
+  "keywords": [
+    "ember-addon",
+    "ember-engine"
+  ],
+  "repository": "",
+  "license": "MIT",
+  "author": "",
+  "directories": {
+    "doc": "doc",
+    "test": "tests"
+  },
+  "scripts": {
+    "build": "ember build",
+    "lint:hbs": "ember-template-lint .",
+    "lint:js": "eslint .",
+    "start": "ember serve",
+    "test": "ember test",
+    "test:all": "ember try:each"
+  },
+  "dependencies": {
+    "univers-app-components": "0.0.0",
+    "common-components": "0.0.0",
+    "ember-auto-import": "*",
+    "ember-cli-htmlbars": "*",
+    "ember-cli-babel": "*",
+    "addon-canvas": "0.0.0",
+    "calc-utils": "0.0.0"
+  },
+  "devDependencies": {
+    "three": "0.165.0"
+  },
+  "engines": {
+    "node": "8.* || >= 10.*"
+  },
+  "ember-addon": {
+    "configPath": "tests/dummy/config"
+  }
+}

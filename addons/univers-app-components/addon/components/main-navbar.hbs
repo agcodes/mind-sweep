@@ -1,0 +1,208 @@
+<div data-name="navbar" class="main-navbar container-fluid hide-m">
+  <div data-name="navbar-row" class="row">
+    <nav class="navbar navbar-expand-lg" id="main-nav-bar">
+      <div class="container-xxl">
+        <div class="row">
+          <div class="col col-12">
+            <ul class="nav navbar">
+              <li class="">
+                <LinkTo
+                  role="link"
+                  @route="index"
+                  title="{{t 'Home'}}"
+                  rel="home"
+                >
+                  <span class="pad-nav-link">
+                    <img
+                      src="{{this.rootURL}}assets/img/logo-32-32.png"
+                      height="32"
+                      width="32"
+                      alt="{{t 'SITE_TITLE'}}"
+                      loading="lazy"
+                      class="rounded elementor-animation-pulse"
+                    />
+                  </span>
+                </LinkTo>
+              </li>
+
+              <li class="nav-item">
+                <LinkTo role="link" @route="index" class="nav-link">
+                  {{t "SITE_TITLE"}}
+                </LinkTo>
+              </li>
+
+              <li class="d-none d-md-block nav-item">
+                {{#if this.navigationService.routeEnabled1}}
+                  <LinkTo
+                    role="link"
+                    @route="index"
+                    title="{{t 'Home'}}"
+                    rel="home"
+                    class="nav-link"
+                  >
+                    <span class="pad-nav-link">
+                      <span
+                        aria-label="{{t 'Home'}}"
+                        class="glyphicon glyphicon-th"
+                      ></span>
+                    </span>
+                  </LinkTo>
+                {{/if}}
+              </li>
+
+              {{#if this.navigationService.routeEnabled1}}
+                <li class="nav-item">
+                  <LinkTo
+                    @route={{this.navigationService.routeName1}}
+                    title="index"
+                    class="nav-link"
+                  >
+                    <span
+                      class="glyphicon glyphicon-list"
+                      aria-hidden="true"
+                      aria-label="{{t 'Index'}}"
+                    ></span>
+                  </LinkTo>
+                </li>
+              {{else}}
+                <li class="nav-item child-m">
+                  <LinkTo role="link" @route="gallery" class="nav-link">
+                    {{t "Gallery"}}
+                  </LinkTo>
+                </li>
+                <LinksNavbar />
+              {{/if}}
+
+              {{#if this.navigationService.routeEnabled2}}
+                <li class="d-none d-md-block nav-item">
+                  <LinkTo
+                    role="link"
+                    @route={{this.navigationService.routeName2}}
+                    class="nav-link"
+                  >
+                    {{this.navigationService.routeTitle2}}
+                  </LinkTo>
+                </li>
+              {{else}}
+                {{#if this.pageTitleEnabled}}
+                  <li class="d-none d-md-block nav-item">
+                    {{this.navigationService.routeTitle2}}
+                  </li>
+                {{/if}}
+
+                <li class="nav-item d-block d-md-none">
+                  <a
+                    class="nav-link"
+                    data-bs-toggle="offcanvas"
+                    href="#offcanvasFormBurger"
+                    role="button"
+                    aria-controls="offcanvasFormBurger"
+                  >
+                    <span class="pad-nav-link">
+                      <span class="glyphicon glyphicon-menu-hamburger"></span>
+                    </span>
+                  </a>
+                </li>
+              {{/if}}
+
+              {{#if this.navigationService.fullScreenEnabled}}
+                <li class="nav-item d-none d-md-block">
+                  <button
+                    class="nav-link text-white"
+                    title="{{tr 'Full screen'}}"
+                    rel="nofollow"
+                    role="button"
+                    type="button"
+                    {{on "click" (fn this.fullScreen @event)}}
+                  >
+                    <span
+                      aria-label="{{tr 'Full screen'}}"
+                      class="glyphicon glyphicon-fullscreen"
+                    ></span>
+                  </button>
+                </li>
+              {{/if}}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>
+
+<div id="nav-progress-bar">
+</div>
+
+<div
+  class="offcanvas offcanvas-end"
+  tabindex="-1"
+  id="offcanvasFormBurger"
+  aria-labelledby="offcanvasFormBurgerLabel"
+>
+  <div class="offcanvas-header">
+    <button
+      type="button"
+      class="btn-close btn-close-white text-reset"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
+  </div>
+
+  <div class="offcanvas-body">
+    <nav class="nav flex-column">
+      <ul>
+        <li class="nav-item child-m">
+          <LinkTo
+            role="link"
+            data-bs-dismiss="offcanvas"
+            class="nav-link text-white"
+            @route="sources"
+          >
+            {{t "References"}}
+          </LinkTo>
+        </li>
+        <li class="nav-item child-m">
+          <LinkTo
+            role="link"
+            data-bs-dismiss="offcanvas"
+            class="nav-link text-white"
+            @route="about"
+          >
+            {{t "About"}}
+          </LinkTo>
+        </li>
+        <li class="nav-item child-m">
+          <LinkTo
+            role="link"
+            data-bs-dismiss="offcanvas"
+            @route="gallery"
+            class="nav-link text-white"
+          >
+            {{t "Gallery"}}
+          </LinkTo>
+        </li>
+        <LinksNavbar />
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<div
+  class="d-none container-xxl mt-4 mb-3 {{this.navigationService.routeClass1}}"
+>
+  <h1 class="h1 m-4 mt-0 page-title">
+    {{#if this.navigationService.routeEnabled2}}
+      <LinkTo
+        role="link"
+        @route={{this.navigationService.routeName2}}
+        class="nav-link text-white"
+      >
+        {{this.navigationService.routeTitle2}}
+      </LinkTo>
+    {{else}}
+      {{#if this.pageTitleEnabled}}
+        {{this.navigationService.routeTitle2}}
+      {{/if}}
+    {{/if}}
+  </h1>
+</div>
