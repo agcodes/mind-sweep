@@ -1,7 +1,5 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
-# compiled output
-/dist/
 /tmp/
 /ssl/
 
@@ -38,40 +36,3 @@ google-cloud-sdk-snap/
 package-lock.json
 aggit
 aggit.pub
-public/assets/ffmpeg_2
-public/assets/.ffmpeg_2.kate-swp
-ssh
-host-app/dist/assets/vendor.js
-host-app/dist/assets/vendor.map
-/host-app/dist/engines-dist
-*/dist/*
-/host-app/public/assets/js/fractals-lib
-/host-app/public/assets/js/fractals-lib/addon
-/host-app/dist
-/host-app/dist/api
-*/host-app/dist/*
-host-app/dist/*
-dist/*
-*/dist/
-/host-app/dist
-/host-app/dist
-/host-app/dist/api
-host-app/dist/api/julia-set/data-js-tree-1.json
-host-app/dist/api/julia-set/data-js-tree-2.json
-host-app/dist/api/l-system/data-1.json
-host-app/dist/assets/css/universlogique.css
-host-app/dist/assets/css/universlogique.css.map
-host-app/dist/assets/css/universlogique.scss
-host-app/dist/assets/host-app.js
-host-app/dist/assets/host-app.map
-host-app/dist/assets/img/menu-3.jpg
-host-app/dist/assets/img/menu-drawings.jpg
-host-app/dist/assets/vendor.js
-host-app/dist/assets/vendor.map
-host-app/dist/engines-dist/generative/assets/engine.js
-host-app/dist/engines-dist/generative/assets/engine.map
-host-app/dist/index.html
-host-app/dist/sw.js
-host-app/dist/tests/index.html
-/host-app/dist/assets
-/host-app/dist
