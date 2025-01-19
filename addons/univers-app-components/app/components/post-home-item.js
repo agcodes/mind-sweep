@@ -1,1 +1,0 @@
-export { default } from 'univers-app-components/components/post-home-item';
