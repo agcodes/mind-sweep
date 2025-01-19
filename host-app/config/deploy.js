@@ -9,6 +9,7 @@ module.exports = function (deployTarget) {
     githubPages: {
       app: 'mind-sweep',  // Name of your GitHub Pages repository
       branch: 'gh-pages', // Branch where the site will be deployed
+      sourceBranch: 'master', // 
       distDir: 'dist',    // The directory containing the built files
     },
   };
