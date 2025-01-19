@@ -1,0 +1,37 @@
+@import 'universlogique';
+
+.page-index {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.page-index section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.svg-play {
+  width: 400px;
+  height: 400px;
+
+  /* Effet au survol */
+  &:hover circle {
+    fill: hsla(140, 100%, 40%, 1);
+    /* Change la couleur du cercle en vert lors du survol */
+  }
+
+  &:hover {
+    transform: scale(1.02);
+    /* Agrandir légèrement le SVG au survol */
+  }
+}
+
+canvas {
+
+  &:active {
+    border: 0;
+  }
+}

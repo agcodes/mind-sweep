@@ -1,0 +1,1 @@
+!function(t,i){"use strict";t.Complex=function(t,s){var n=this;this.a=t!=i?t:0,this.b=s!=i?s:0,this.isEquals=function(t){return t.a==n.a&&t.b==n.b},this.copy=function(t){n.a=t.a,n.b=t.b}}}(self);

@@ -1,0 +1,1 @@
+export default class Complex{constructor(s,t){this.a=null!=s?s:0,this.b=null!=t?t:0}isEquals(s){return s.a==this.a&&s.b==this.b}copy(s){this.a=s.a,this.b=s.b}}
